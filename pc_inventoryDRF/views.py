@@ -72,9 +72,13 @@ class ComponentView(generics.ListCreateAPIView):
     #     return super().get_permissions()
 
 class SingleComponentView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Component.objects.all()
+    # queryset = Component.objects.all()
     serializer_class = ComponentSerializer
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Component.objects.filter(user=user)
 
     # def get_permissions(self):
     #     if self.request.method in ['DELETE', 'PUT', 'PATCH']:

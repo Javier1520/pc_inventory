@@ -31,7 +31,7 @@ class BrandSerializer(serializers.ModelSerializer):
         fields = ('id', 'slug', 'title')
 
 class ComponentSerializer(serializers.ModelSerializer):
-    date_creation = serializers.DateTimeField(read_only=True)
+    date_creation = serializers.DateTimeField(format="%d/%m/%Y - %H:%M", read_only=True)
     category = CategorySerializer(read_only=True)
     category_id = serializers.IntegerField(write_only=True)
     brand = BrandSerializer(read_only=True)
