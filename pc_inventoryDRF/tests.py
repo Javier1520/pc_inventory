@@ -11,7 +11,7 @@ class CategoryTests(TestCase):
         self.client = APIClient()
         self.user = User.objects.create_user(username='testuser', password='testpass')
         self.client.force_authenticate(user=self.user)
-        self.category = Category.objects.create(slug='category-1', title='Category 10')
+        self.category = Category.objects.create(slug='category-1', title='Category 1')
 
     def test_category_list(self):
         response = self.client.get(reverse('categories'))
