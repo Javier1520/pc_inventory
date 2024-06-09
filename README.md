@@ -103,5 +103,11 @@ All requests and responses use JSON format.
 ```
 python3 -m pip install --user pipenv
 ```
-### pipenv shell
-### pipenv install
+### Create pipenv environment
+```
+pipenv shell
+```
+### Install dependencies
+```
+pipenv install
+```
