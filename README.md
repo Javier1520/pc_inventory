@@ -98,3 +98,10 @@ All requests and responses use JSON format.
     "user": 1
 }
 ```
+## Installation
+### Install pipenv
+```
+python3 -m pip install --user pipenv
+```
+### pipenv shell
+### pipenv install
