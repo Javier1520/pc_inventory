@@ -13,9 +13,5 @@ WORKDIR /code
 COPY . /code/
 RUN pip install pipenv && pipenv install --deploy
 
-# Activate virtual environment
-SHELL ["/bin/bash", "-c"]
-RUN source "$(pipenv --venv)"/bin/activate
-
-# Run the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run tests using pipenv run
+CMD ["pipenv", "run", "python", "manage.py", "test"]
