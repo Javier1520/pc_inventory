@@ -16,7 +16,7 @@ This API provides endpoints for managing categories, brands, and components in a
 ## Build and run the application:
 
 1. Open a terminal.
-2. Navigate to the project directory (where the `Dockerfile` and `docker-compose.yml` are located).
+2. Navigate to the project directory (where the `Dockerfile` and `docker-compose.yaml` are located).
 3. Run the following command:
 
     ```sh
