@@ -61,7 +61,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: user/pc_inventory:latest
+          tags: javier1520docker/pc_inventory:latest
 
       - name: echo success
         run: echo 'Successfully executed'
