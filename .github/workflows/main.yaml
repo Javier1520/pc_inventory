@@ -38,7 +38,7 @@ jobs:
       - name: Run Tests
         run: |
           container_id=$(docker ps -aqf "name=pc_inventory_web_1")
-          docker exec -it $container_id bash -c "cd /code && python manage.py test"
+          docker exec -T $container_id bash -c "cd /code && python manage.py test"
         env:
           POSTGRES_DB: pc_inventory
           POSTGRES_USER: user
