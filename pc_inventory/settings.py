@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'djoser',
 
     #apps
-    'pc_inventoryDRF.apps.PcInventorydrfConfig',
+    'pc_inventoryDRF',
 
 ]
 
@@ -146,16 +146,6 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle'
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '1/minute',
-        'user': '2/minute',
-    },
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
 }
 
 DJOSER = {
