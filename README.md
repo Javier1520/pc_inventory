@@ -38,7 +38,7 @@ Once the containers are up and running, you can access the Django application at
 
 ### Volumes:
 
-The `volumes` directive in `docker-compose.yml` ensures that any changes in your local directory are reflected inside the container immediately. This is useful for development purposes.
+The `volumes` directive in `docker-compose.yaml` ensures that any changes in your local directory are reflected inside the container immediately. This is useful for development purposes.
 
 ### Database:
 
