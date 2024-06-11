@@ -55,10 +55,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
-          file: ./Dockerfile
+          context: ${{ github.workspace }}
+          file: ${{ github.workspace }}/Dockerfile  # Using absolute path
           push: true
           tags: user/pc_inventory:latest
-
-      - name: echo success
-        run: echo 'Successfully executed'
