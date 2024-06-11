@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
 from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
@@ -28,20 +26,12 @@ class SingleCategoryView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
     permission_classes = [IsAuthenticated]
 
-    # def get_permissions(self):
-    #     if self.request.method in ['DELETE', 'PUT', 'PATCH']:
-    #         return [IsAuthenticated()]
-    #     return super().get_permissions()
 
 class BrandView(generics.ListCreateAPIView):
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer
     permission_classes = [IsAuthenticated]
 
-    # def get_permissions(self):
-    #     if self.request.method in ['POST']:
-    #         return [IsAuthenticated()]
-    #     return super().get_permissions()
 
 class SingleBrandView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Brand.objects.all()
@@ -49,10 +39,6 @@ class SingleBrandView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'slug'
     permission_classes = [IsAuthenticated]
 
-    # def get_permissions(self):
-    #     if self.request.method in ['DELETE', 'PUT', 'PATCH']:
-    #         return [IsAuthenticated()]
-    #     return super().get_permissions()
 
 class ComponentView(generics.ListCreateAPIView):
     # queryset = Component.objects.all()
@@ -66,10 +52,6 @@ class ComponentView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    # def get_permissions(self):
-    #     if self.request.method in ['POST']:
-    #         return [IsAuthenticated()]
-    #     return super().get_permissions()
 
 class SingleComponentView(generics.RetrieveUpdateDestroyAPIView):
     # queryset = Component.objects.all()
@@ -80,7 +62,3 @@ class SingleComponentView(generics.RetrieveUpdateDestroyAPIView):
         user = self.request.user
         return Component.objects.filter(user=user)
 
-    # def get_permissions(self):
-    #     if self.request.method in ['DELETE', 'PUT', 'PATCH']:
-    #         return [IsAuthenticated()]
-    #     return super().get_permissions()
