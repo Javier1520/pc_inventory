@@ -11,7 +11,9 @@ WORKDIR /code
 
 # Install dependencies
 COPY . /code/
-RUN pip install pipenv && pipenv install --dev --deploy
+RUN pip install pipenv \
+    && pipenv install --deploy \
+    && pipenv shell
 
 # Run the Django development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
