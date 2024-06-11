@@ -31,10 +31,14 @@ jobs:
           push: false
           tags: user/pc_inventory:latest
 
-      - name: Run Docker Compose for tests
+      - name: Run Docker Compose
         run: |
           docker-compose -f docker-compose.yaml up -d
-          docker-compose -f docker-compose.yaml exec -T web pipenv run python manage.py test
+
+      - name: Run Tests
+        run: |
+          container_id=$(docker ps -aqf "name=pc_inventory_web_1")
+          docker exec -it $container_id bash -c "cd /code && python manage.py test"
         env:
           POSTGRES_DB: pc_inventory
           POSTGRES_USER: user
