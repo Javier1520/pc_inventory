@@ -36,7 +36,7 @@ jobs:
           docker-compose -f docker-compose.yaml up -d
 
       - name: Run Tests
-        run: docker-compose run --rm web sh -c "python manage.py test"
+        run: docker-compose run web python manage.py test
         env:
           POSTGRES_DB: pc_inventory
           POSTGRES_USER: user
