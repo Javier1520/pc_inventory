@@ -158,15 +158,12 @@ All requests and responses use JSON format.
         "id": 1,
         "slug": "motherboards",
         "title": "Motherboards"
-    },
-    "category_id": 1,
+    },    
     "brand": {
         "id": 1,
         "slug": "asus",
         "title": "ASUS"
     },
-    "brand_id": 1,
-    "user": 1
 }
 ```
 ## Installation without docker
