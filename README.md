@@ -9,7 +9,7 @@ This API provides endpoints for managing categories, brands, and components in a
 - **Docker:** [Get Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose:** [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-### Your versions:
+### Development's versions:
 - Docker version 26.1.1, build 4cf5afa
 - Docker Compose version v2.27.1
 
