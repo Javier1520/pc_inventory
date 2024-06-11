@@ -10,13 +10,8 @@ RUN mkdir /code
 WORKDIR /code
 
 # Install dependencies
-COPY Pipfile Pipfile.lock /code/
-RUN pip install pipenv && pipenv install --system
-
-# Copy only the necessary files and folders
-COPY manage.py /code/
-COPY pc_inventory /code/pc_inventory
-COPY pc_inventoryDRF /code/pc_inventoryDRF
+COPY . /code/
+RUN pip install pipenv && pipenv install --system --deploy
 
 # Run the Django development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
