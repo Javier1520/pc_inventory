@@ -16,7 +16,7 @@ RUN pip install pipenv && pipenv install --system --deploy
 # Install Django
 RUN pip install django
 
-RUN pipenv shell
+RUN pipenv run python manage.py migrate
 
 # Set the environment variable for Django settings
 ENV DJANGO_SETTINGS_MODULE=pc_inventory.settings
