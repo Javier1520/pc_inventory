@@ -5,9 +5,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: pc_inventory
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      - POSTGRES_DB=pc_inventory
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
 
   web:
     build: .
